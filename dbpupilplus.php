@@ -15,10 +15,11 @@
             $mail = htmlspecialchars($_GET["mail"]);
             $fname = "$name, $vname";
         
-            $sql3 = "SELECT tcur FROM projects WHERE id=$pnum;";
+            $sql3 = "SELECT tcur, tmax FROM projects WHERE id=$pnum;";
             $anfrage2 = mysqli_query($db_link, $sql3);
             $row2 = mysqli_fetch_array($anfrage2);
-            $tcur = $row2['tcur'];  $tmax = 5;
+            $tcur = $row2['tcur'];
+            $tmax = $row2['tmax'];
         
             if(strlen($vname)>2 && strlen($name)>2 && 2<strlen($klasse) && strlen($klasse)<5 && $tcur<$tmax) 
             {
@@ -35,6 +36,9 @@
                      Bitte notiere sie und hebe sie gut auf, falls Rückfragen bestehen!";
                 
                 echo '<p> <a href="index.php"> zurück </a> </p>';
+            }
+            else if($tcur = $tmax){
+                echo "Projekt ist leider voll bitte wähle ein anderes aus.";
             }
             else
             {
