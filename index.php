@@ -29,7 +29,7 @@
                 {
                     echo ('<p><a href="project.php?id=' . $zeile['id'] . "&pname=" . utf8_encode($zeile['pname']) . "&lehrer=" . utf8_encode($zeile['lehrer']) . 
                           "&tmax=" . $zeile['tmax'] . '">Projekt ' . $zeile['id'] . ": " . utf8_encode($zeile['pname']) . "</a>: " . utf8_encode($zeile['lehrer']) . 
-                          " (Maximal " . $zeile['tmax'] . " Schüler)</p>");
+                          " ( " . $zeile['tcur'] . " / " . $zeile['tmax'] . ")" . "</p>");
                 }
         ?>
         

@@ -7,14 +7,15 @@
 <?php
             include "config.php";
 
-        
+
+
             $pnum = htmlspecialchars($_GET["id"]);
             $vname = utf8_decode(htmlspecialchars($_GET["vname"]));
             $name = utf8_decode(htmlspecialchars($_GET["name"]));
             $klasse = htmlspecialchars($_GET["klasse"]);
             $mail = htmlspecialchars($_GET["mail"]);
             $fname = "$name, $vname";
-        
+
             $sql3 = "SELECT tcur, tmax FROM projects WHERE id=$pnum;";
             $anfrage2 = mysqli_query($db_link, $sql3);
             $row2 = mysqli_fetch_array($anfrage2);
