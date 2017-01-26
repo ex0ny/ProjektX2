@@ -23,7 +23,6 @@
             if(strlen($vname)>2 && strlen($name)>2 && 2<strlen($klasse) && strlen($klasse)<5 && $tcur<$tmax) 
             {
                 $sql1 = "INSERT INTO pupils (pnum, fname, vname, name, klasse, mail) VALUES ( $pnum, '$fname', '$vname', '$name', '$klasse', '$mail' );";
-                echo $eintrag = mysqli_query($db_link, $sql1);
                 $sql4 = "UPDATE projects SET tcur = tcur + 1 WHERE id=$pnum;";
                 $increase = mysqli_query($db_link, $sql4);
                 echo "Du hat dich erfolgreich für dein Projekt eingetragen,<br>";
