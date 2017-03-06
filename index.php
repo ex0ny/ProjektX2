@@ -12,8 +12,9 @@
                 <h1>Projektwoche 2017: Eintragung</h1>
                 <p>
                     Hier kannst du dich für die Projektwoche 2017 eintragen. Bitte wähle eines der folgenden Projekte,
-                    <br>
                     um dich einzutragen. Fülle dazu einfach das auftauchende Formular aus und folge weiteren Anweisungen!
+                    Achte darauf, dass du dich nich für ein bereits volles Projekt eintragen kannst. Die momentane und maximale
+                    Teilnehmerzahl findest du hinter dem jeweiligen Projekt! Bereits gefüllte Projekte werden nicht mehr aufgelistet!
                 </p>
             </div>
             <div class="projects centered">
@@ -31,9 +32,12 @@
 
                 while ($zeile = mysqli_fetch_array( $db_erg ))
                 {
+                    if ( $zeile['tcur']<$zeile['tmax'])
+                    {
                     echo ('<div class = "article"><p><a href="project.php?id=' . $zeile['id'] . "&pname=" . utf8_encode($zeile['pname']) . "&lehrer=" . utf8_encode($zeile['lehrer']) .
                         "&tmax=" . $zeile['tmax'] . '">Projekt ' . $zeile['id'] . ": " . utf8_encode($zeile['pname']) . "</a>: " . utf8_encode($zeile['lehrer']) .
-                        " ( " . $zeile['tcur'] . " / " . $zeile['tmax'] . ")" . "</p></div>");
+                        " ( " . $zeile['tcur'] . " / " . $zeile['tmax'] . " Teilnehmer)" . "</p></div>");
+                    }
                 }
                 ?>
             </div>

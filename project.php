@@ -22,7 +22,9 @@
                     Dein Vorname: <br> <input type='text' name='vname'><br>
                     Dein Nachname:<br> <input type='text' name='name'><br>
                     Deine Klasse:<br> <input type='text' name='klasse'><br>
-                    Deine Email-Adresse:<br> <input type='email' name='mail'><br><br>
+                    Deine Email-Adresse:<br> <input type='email' name='mail1'><br>
+                    Email-Adresse wiederholen:<br> <input type='email' name='mail2'><br><br>
+                    
                     <input type='submit' value='EINTRAGEN'>
                     
                 </form>"   
